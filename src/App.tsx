@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const App = () => {
   type Note = {
@@ -8,42 +8,24 @@ const App = () => {
     content: string;
   };
 
-  const [notes, setNotes] = useState<Note[]>([
-    {
-      id: 1,
-      title: "note title 1",
-      content: "note content 1",
-    },
-    {
-      id: 2,
-      title: "note title 2",
-      content: "note content 2",
-    },
-    {
-      id: 3,
-      title: "note title 3",
-      content: "note content 3",
-    },
-    {
-      id: 4,
-      title: "note title 4",
-      content: "note content 4",
-    },
-    {
-      id: 5,
-      title: "note title 5",
-      content: "note content 5",
-    },
-    {
-      id: 6,
-      title: "note title 6",
-      content: "note content 6",
-    },
-  ]);
+  const [notes, setNotes] = useState<Note[]>([]);
 
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [selectedNote, setSelectedNote] = useState<Note | null>(null);
+
+  useEffect(() => {
+    const fetchNotes = async () => {
+      try {
+        const response = await fetch("http://localhost:5000/api/notes");
+        const notes: Note[] = await response.json();
+        setNotes(notes);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchNotes();
+  }, []);
 
   function handleNoteClick(note: Note) {
     setSelectedNote(note);
@@ -51,17 +33,26 @@ const App = () => {
     setContent(note.content);
   }
 
-  function handleAddNote(event: React.FormEvent) {
+  async function handleAddNote(event: React.FormEvent) {
     event.preventDefault();
-    const newNote: Note = {
-      id: notes.length + 1,
-      title: title,
-      content: content,
-    };
-    setNotes([newNote, ...notes]);
-    console.log(notes);
-    setTitle("");
-    setContent("");
+    try {
+      const response = await fetch("http://localhost:5000/api/notes", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          title,
+          content,
+        }),
+      });
+      const newNote = await response.json();
+      setNotes([newNote, ...notes]);
+      setTitle("");
+      setContent("");
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   function handleUpdateNote(event: React.FormEvent) {
