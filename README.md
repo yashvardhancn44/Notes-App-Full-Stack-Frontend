@@ -1,46 +1,96 @@
-# Getting Started with Create React App
+# 📝 Notes App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- 🚀 This project is designed to provide a fully functional Notes app.
+- It’s powered by **React**, **Express.js**, **Prisma ORM** and **PostgreSQL**. Let's dive into the details! 😎
+- ▶️ [**_Demo-video_**](https://www.youtube.com/watch?v=iCJOGEtGtWo)
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🛠️ **Tech Stack**
 
-### `npm start`
+- **Frontend:** React
+- **Backend:** Express.js, Node.js
+- **Database:** PostgreSQL with Prisma ORM
+- **Tools used:** VSCode, Thunder Client extention.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 💡 **Project Features**
 
-### `npm test`
+- **Add Notes** ➕  
+  Users can easily create new notes and save them to the database.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Edit Notes** ✏️  
+  Modify existing notes to keep information up-to-date.
 
-### `npm run build`
+- **Delete Notes** ❌  
+  Remove notes that are no longer needed.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Data Persistence** 💾  
+  All notes are fetched from the database, ensuring that data is saved and available.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🚀 **Project in Action:**
 
-### `npm run eject`
+Check out ▶️ [**_Demo-video_**](https://www.youtube.com/watch?v=iCJOGEtGtWo).
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<p align="left">
+  <a href="https://www.youtube.com/watch?v=iCJOGEtGtWo" target="_blank">
+  <img src="https://res.cloudinary.com/dxvafakmn/image/upload/v1727318093/notes-app-files/sjcqr7cuhpq8aaqviaei.png" alt="add-notes-image" width="400" />
+  </a>
+  <a href="https://www.youtube.com/watch?v=iCJOGEtGtWo" target="_blank">
+  <img src="https://res.cloudinary.com/dxvafakmn/image/upload/v1727318093/notes-app-files/rcu6ynwjdktvrwhbtvtu.png" alt="edit-notes-image" width="400" />
+  </a>
+</p>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 🔍 **Project Architecture:**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<p align="left">
+  <img src="https://res.cloudinary.com/dxvafakmn/image/upload/v1727317725/system-diagrams/drs0aqqykmqew6simccv.png" alt="notes-sd-image" width="500" />
+</p>
 
-## Learn More
+- **React (Frontend)**: : The user interface is built using React, providing a dynamic and responsive experience.Users can create, read, update, and delete notes seamlessly
+- **Express, Prims ORM and PostgreSQL (Backend)**: The backend API is powered by Express.js. The express app listens to `/api/notes` endpoint and performs the necessary req operations. Utilized Prisma ORM as an abstraction layer to facilitate seamless interactions with our PostgreSQL database.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🚀 **Getting Started**
+
+### 1. **Clone the Repository**
+
+In the root, create two folder with the below names, navigate and clone the repo:
+
+```bash
+cd notes-app-server
+git clone https://github.com/yashvardhancn44/Notes-App-Fullstack-Backend.git
+
+cd ../notes-app-ui
+git clone https://github.com/yashvardhancn44/Notes-App-Full-Stack-Frontend.git
+```
+
+### 2. **Install Dependencies**
+
+Install Dependencies in each directory.
+
+```bash
+npm install
+```
+
+### 3. **Environment Variables**
+
+Create a `.env` file in the `notes-app-server` directory
+
+```bash
+DATABASE_URL="Add-your-postgresURL"
+```
+
+### 4. **Run the project**
+
+Open seperate 2 Bash terminals, navigate to respective directories and run.
+
+```bash
+npm start
+```
