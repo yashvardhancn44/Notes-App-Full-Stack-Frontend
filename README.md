@@ -49,7 +49,7 @@ Check out ▶️ [**_Demo-video_**](https://www.youtube.com/watch?v=iCJOGEtGtWo)
 ## 🔍 **Project Architecture:**
 
 <p align="left">
-  <img src="https://res.cloudinary.com/dxvafakmn/image/upload/v1727317725/system-diagrams/drs0aqqykmqew6simccv.png" alt="notes-sd-image" width="500" />
+  <img src="https://res.cloudinary.com/dxvafakmn/image/upload/v1727321664/system-diagrams/im1b0dchisexdponi5qc.png" alt="notes-sd-image" width="500" />
 </p>
 
 - **React (Frontend)**: : The user interface is built using React, providing a dynamic and responsive experience.Users can create, read, update, and delete notes seamlessly
